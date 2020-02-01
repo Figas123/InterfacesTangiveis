@@ -10,6 +10,7 @@ public class InteractableController : MonoBehaviour
     public GameObject Resposta2Canvas;
     public GameObject Resposta3Canvas;
     public GameObject Door;
+    public GameObject DoorBonus;
     public Material Green;
     public Material Red;
 
@@ -99,7 +100,10 @@ public class InteractableController : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("Open", true);
             Door.GetComponent<Animator>().SetBool("Open", true);
             if (myAnswer == theAnswer)
+            {
                 gameObject.GetComponentInChildren<MeshRenderer>().material = Green;
+                DoorBonus.GetComponent<Animator>().SetBool("Open", true);
+            }
             else
                 gameObject.GetComponentInChildren<MeshRenderer>().material = Red;
         }
