@@ -1693,6 +1693,7 @@ MonoBehaviour:
   Resposta2Canvas: {fileID: 0}
   Resposta3Canvas: {fileID: 0}
   Door: {fileID: 0}
+  DoorBonus: {fileID: 0}
   Green: {fileID: 2100000, guid: 5e44ed7922b543c45b09630c19fdfa01, type: 2}
   Red: {fileID: 2100000, guid: 4d0e47b9e521204468d0ee22fd8212a8, type: 2}
   Interactable: 0

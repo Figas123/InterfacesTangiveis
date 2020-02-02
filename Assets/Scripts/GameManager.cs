@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject[] Interactables = new GameObject[5];
+    public Text textItems;
+    public Text textCorrect;
+    public int ItemCounter;
+    public int CorrectCounter;
 
     void Start()
     {
@@ -31,5 +36,11 @@ public class GameManager : MonoBehaviour
                 Interactables[i].GetComponent<InteractableController>().Grupo3 = true;
             }
         }
+    }
+
+    void Update()
+    {
+        textItems.GetComponent<Text>().text = ItemCounter.ToString();
+        textCorrect.GetComponent<Text>().text = CorrectCounter.ToString();
     }
 }

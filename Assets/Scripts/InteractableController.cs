@@ -4,6 +4,7 @@ using System.Collections;
 
 public class InteractableController : MonoBehaviour
 {
+    public GameManager gameManager;
     public GameObject Canvas;
     public GameObject PerguntaCanvas;
     public GameObject Resposta1Canvas;
@@ -42,6 +43,8 @@ public class InteractableController : MonoBehaviour
     public SelectAnswer theAnswerGrupo1;
     public SelectAnswer theAnswerGrupo2;
     public SelectAnswer theAnswerGrupo3;
+
+    bool loop = true;
 
     void Start()
     {
@@ -99,12 +102,14 @@ public class InteractableController : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("Open", true);
             Door.GetComponent<Animator>().SetBool("Open", true);
-            if (myAnswer == theAnswer)
+            if (myAnswer == theAnswer && loop == true)
             {
+                loop = false;
                 gameObject.GetComponentInChildren<MeshRenderer>().material = Green;
                 DoorBonus.GetComponent<Animator>().SetBool("Open", true);
+                gameManager.CorrectCounter++;
             }
-            else
+            else if (myAnswer != theAnswer && loop == true)
                 gameObject.GetComponentInChildren<MeshRenderer>().material = Red;
         }
     }
