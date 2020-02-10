@@ -6,6 +6,7 @@ using UnityEngine;
 public class EXIT : MonoBehaviour
 {
     public GameManager gameManager;
+    public PauseMenu PM;
     public GameObject MainCanvas;
     public GameObject ExitCanvas;
     public Text Text;
@@ -15,6 +16,7 @@ public class EXIT : MonoBehaviour
         if (other.tag == "Player")
         {
             other.GetComponent<CharacterController>().enabled = false;
+            PM.Pausable = false;
             MainCanvas.SetActive(false);
             ExitCanvas.SetActive(true);
             if (gameManager.CorrectCounter > 0 && gameManager.ItemCounter > 0)

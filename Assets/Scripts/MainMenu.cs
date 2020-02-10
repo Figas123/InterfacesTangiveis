@@ -12,6 +12,10 @@ public class MainMenu : MonoBehaviour
     public string _CreditsName;
     public string _MenuName;
 
+    public GameObject MainCanvas;
+    public GameObject VideoCanvas;
+    public GameObject VideoCanvas2;
+
     public void _PlayGame()
     {
         SceneManager.LoadScene(_levelName);
@@ -25,6 +29,30 @@ public class MainMenu : MonoBehaviour
     public void _Intructions()
     {
         SceneManager.LoadScene(_InstructionsName);
+    }
+
+    public void _Video()
+    {
+        MainCanvas.SetActive(false);
+        VideoCanvas.SetActive(true);
+    }
+
+    public void _Video2()
+    {
+        MainCanvas.SetActive(false);
+        VideoCanvas2.SetActive(true);
+    }
+
+    public void _VideoBACK()
+    {
+        MainCanvas.SetActive(true);
+        VideoCanvas.SetActive(false);
+    }
+
+    public void _VideoBACK2()
+    {
+        MainCanvas.SetActive(true);
+        VideoCanvas2.SetActive(false);
     }
 
     public void _Credits()
